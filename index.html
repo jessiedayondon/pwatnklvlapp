@@ -52,22 +52,22 @@
     <select id="tankSelect"></select>
 
     <label for="readingInput">Level</label>
-    <input type="text" inputmode="decimal" id="readingInput" placeholder="" oninput="formatCommas(this)">
+    <input type="text" inputmode="decimal" id="readingInput" placeholder="-" oninput="formatCommas(this)">
 
     <label for="densityInput">Density</label>
-    <input type="text" inputmode="decimal" id="densityInput" placeholder="e.g., 1.05">
+    <input type="text" inputmode="decimal" id="densityInput" placeholder="-">
 
-    <label for="brixInput">Brix (Decimal e.g., .45 — whole numbers auto-divide by 100)</label>
-    <input type="text" inputmode="decimal" id="brixInput" placeholder="e.g., .45">
+    <label for="brixInput">Brix</label>
+    <input type="text" inputmode="decimal" id="brixInput" placeholder="-">
 
     <button class="btn-calc" onclick="calculate()">Calculate</button>
     <button class="btn-sync" onclick="syncData()">↻ Sync Cloud Calibration Data</button>
 
     <div class="result-box" id="resultBox" style="display:none;">
-      <div class="result-row"><span>Interpolated Correction:</span> <strong id="resCorrection">-</strong></div>
+      <div class="result-row"><span>Correction:</span> <strong id="resCorrection">-</strong></div>
       <div class="result-row"><span>Actual Volume:</span> <strong id="resVolume">-</strong></div>
-      <div class="result-row"><span>Brix Used:</span> <strong id="resBrixUsed">-</strong></div>
-      <div class="result-row"><span>Final Result (Vol × Dens × Brix):</span> <strong id="resFinal">-</strong></div>
+      <div class="result-row"><span>Brix:</span> <strong id="resBrixUsed">-</strong></div>
+      <div class="result-row"><span>Final Result:</span> <strong id="resFinal">-</strong></div>
     </div>
 
     <div class="status" id="statusText">Checking local database...</div>
