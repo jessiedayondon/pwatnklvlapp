@@ -1,4 +1,4 @@
-const CACHE_NAME = "tank-calc-v26";
+const CACHE_NAME = "tank-calc-v27";
 const ASSETS = ["./", "./index.html", "./manifest.json", "./bg.jpg", "./icon.png"];
 
 self.addEventListener("install", (e) => {
