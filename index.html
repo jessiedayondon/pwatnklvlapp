@@ -25,24 +25,73 @@
       background-repeat: no-repeat;
       box-sizing: border-box;
     }
-
     .card { 
-      background: rgba(255, 255, 255, 0.94); 
-      backdrop-filter: blur(6px);
-      padding: 20px; 
-      border-radius: 12px; 
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+      background: transparent; 
+      padding: 10px 0; 
+      box-shadow: none; 
     }
-    h2 { margin-top: 0; font-size: 1.3rem; }
-    label { display: block; font-weight: 600; margin-top: 14px; font-size: 0.9rem; }
-    select, input { width: 100%; padding: 10px; margin-top: 6px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; box-sizing: border-box; }
-    button { width: 100%; padding: 12px; margin-top: 18px; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; }
+    h2 { 
+      margin-top: 0; 
+      font-size: 1.4rem; 
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    }
+    label { 
+      display: block; 
+      font-weight: 600; 
+      margin-top: 14px; 
+      font-size: 0.95rem; 
+      color: #ffffff;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
+    }
+    select, input { 
+      width: 100%; 
+      padding: 12px; 
+      margin-top: 6px; 
+      border: none; 
+      border-radius: 8px; 
+      font-size: 1rem; 
+      box-sizing: border-box;
+      background: #ffffff;
+      color: #222222;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+    button { 
+      width: 100%; 
+      padding: 12px; 
+      margin-top: 18px; 
+      border: none; 
+      border-radius: 8px; 
+      font-size: 1rem; 
+      font-weight: 600; 
+      cursor: pointer; 
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
     .btn-calc { background: #0066cc; color: white; }
     .btn-sync { background: #e9ecef; color: #333; margin-top: 10px; font-size: 0.9rem; }
-    .result-box { margin-top: 20px; padding: 15px; background: #eef6ff; border-radius: 8px; border-left: 4px solid #0066cc; }
-    .result-row { display: flex; justify-content: space-between; margin: 6px 0; }
-    .status { font-size: 0.8rem; color: #555; margin-top: 12px; text-align: center; }
-  </style>
+    .result-box { 
+      margin-top: 20px; 
+      padding: 15px; 
+      background: #eef6ff; 
+      color: #222222;
+      border-radius: 8px; 
+      border-left: 4px solid #0066cc;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+    }
+    .result-row { 
+      display: flex; 
+      justify-content: space-between; 
+      margin: 6px 0; 
+    }
+    .status { 
+      font-size: 0.85rem; 
+      color: #f1f5f9; 
+      margin-top: 14px; 
+      text-align: center;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+    }
+</style>
+
 </head>
 <body>
   <div class="card">
