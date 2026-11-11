@@ -216,10 +216,6 @@ T595,34000,0`;
       if (isNaN(density)) return alert("Please enter a valid Density value.");
       if (isNaN(brix)) return alert("Please enter a valid Brix value.");
 
-      // Auto-divide by 100 if entered as a whole number (e.g., 45 -> 0.45)
-      if (brix > 1) {
-        brix = brix / 100;
-      }
 
       const points = calibrationData[tank];
       let correction = 0;
