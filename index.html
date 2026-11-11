@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tank Calibration Calculator</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="icon" type="image/png" href="icon.png">
+  <style>
+    html {
+      min-height: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("data:image/jpeg;base64,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") no-repeat center center fixed;
+      background-size: cover;
+    }
+    body { 
+      font-family: system-ui, sans-serif; 
+      max-width: 480px; 
+      margin: 0 auto; 
+      padding: 20px; 
+      color: #222;
+      background: transparent;
+    }
+
+    .card { 
+      background: rgba(255, 255, 255, 0.94); 
+      backdrop-filter: blur(6px);
+      padding: 20px; 
+      border-radius: 12px; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+    }
+    h2 { margin-top: 0; font-size: 1.3rem; }
+    label { display: block; font-weight: 600; margin-top: 14px; font-size: 0.9rem; }
+    select, input { width: 100%; padding: 10px; margin-top: 6px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; box-sizing: border-box; }
+    button { width: 100%; padding: 12px; margin-top: 18px; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; }
+    .btn-calc { background: #0066cc; color: white; }
+    .btn-sync { background: #e9ecef; color: #333; margin-top: 10px; font-size: 0.9rem; }
+    .result-box { margin-top: 20px; padding: 15px; background: #eef6ff; border-radius: 8px; border-left: 4px solid #0066cc; }
+    .result-row { display: flex; justify-content: space-between; margin: 6px 0; }
+    .status { font-size: 0.8rem; color: #555; margin-top: 12px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Tank Volume Calculator</h2>
+    
+    <label for="tankSelect">Select Tank</label>
+    <select id="tankSelect"></select>
+
+    <label for="readingInput">Level / Ideal Output Reading</label>
+    <input type="text" inputmode="decimal" id="readingInput" placeholder="e.g., 6,000" oninput="formatCommas(this)">
+
+    <label for="densityInput">Density</label>
+    <input type="text" inputmode="decimal" id="densityInput" placeholder="e.g., 1.05">
+
+    <label for="brixInput">Brix (Decimal e.g., .45 — whole numbers auto-divide by 100)</label>
+    <input type="text" inputmode="decimal" id="brixInput" placeholder="e.g., .45">
+
+    <button class="btn-calc" onclick="calculate()">Calculate</button>
+    <button class="btn-sync" onclick="syncData()">↻ Sync Cloud Calibration Data</button>
+
+    <div class="result-box" id="resultBox" style="display:none;">
+      <div class="result-row"><span>Interpolated Correction:</span> <strong id="resCorrection">-</strong></div>
+      <div class="result-row"><span>Actual Volume:</span> <strong id="resVolume">-</strong></div>
+      <div class="result-row"><span>Brix Used:</span> <strong id="resBrixUsed">-</strong></div>
+      <div class="result-row"><span>Final Result (Vol × Dens × Brix):</span> <strong id="resFinal">-</strong></div>
+    </div>
+
+    <div class="status" id="statusText">Checking local database...</div>
+  </div>
+
+  <script>
+    // PASTE YOUR GOOGLE SHEET CSV URL BELOW:
+    const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/1pqPeunbVrxeV0ilKYQMvGHXk6V7hI4afoDGgdQ-IbnU/edit?usp=drivesdk";
+
+    const DEFAULT_CSV = `Tank,IdealOutput,Correction
+T500,0,-39
+T500,4500,-39
+T500,9000,-78
+T500,13500,-117
+T500,18000,-156
+T510,0,-31
+T510,4500,-32
+T510,9000,-63
+T510,13500,-97
+T510,18000,-126
+T520,0,-36
+T520,4500,-38
+T520,9000,-74
+T520,13500,-113
+T520,18000,-252
+T530,0,-3
+T530,4500,-24
+T530,9000,-24
+T530,13500,-24
+T530,18000,-25
+T540,0,0
+T540,4500,0
+T540,9000,0
+T540,13500,0
+T540,18000,0
+T550,0,-40
+T550,4500,-40
+T550,9000,-79
+T550,13500,-118
+T550,18000,-154
+T560,0,-55
+T560,8500,-55
+T560,17000,-54
+T560,25500,-54
+T560,34000,-56
+T570,0,0
+T570,8500,0
+T570,17000,0
+T570,25500,0
+T570,34000,0
+T580,0,-71
+T580,8500,-71
+T580,17000,-73
+T580,25500,-72
+T580,34000,-72
+T590,0,0
+T590,8500,0
+T590,17000,0
+T590,25500,0
+T590,34000,0
+T595,0,0
+T595,8500,0
+T595,17000,0
+T595,25500,0
+T595,34000,0`;
+
+    let calibrationData = {};
+
+    function formatNumber(num) {
+      return num.toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+    }
+
+    function formatCommas(input) {
+      let raw = input.value.replace(/[^0-9.]/g, "");
+      let parts = raw.split(".");
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      input.value = parts.length > 1 ? parts[0] + "." + parts[1] : parts[0];
+    }
+
+    function parseCSV(csvText) {
+      const lines = csvText.trim().split(/\r?\n/);
+      const data = {};
+      for (let i = 1; i < lines.length; i++) {
+        const [tank, ideal, corr] = lines[i].split(",").map(s => s.trim());
+        if (!tank || isNaN(ideal) || isNaN(corr)) continue;
+        if (!data[tank]) data[tank] = [];
+        data[tank].push({ ideal: parseFloat(ideal), corr: parseFloat(corr) });
+      }
+      for (const tank in data) {
+        data[tank].sort((a, b) => a.ideal - b.ideal);
+      }
+      return data;
+    }
+
+    function populateDropdown() {
+      const select = document.getElementById("tankSelect");
+      select.innerHTML = "";
+      Object.keys(calibrationData).forEach(tank => {
+        const opt = document.createElement("option");
+        opt.value = tank;
+        opt.textContent = tank;
+        select.appendChild(opt);
+      });
+    }
+
+    function loadLocalData() {
+      const savedCSV = localStorage.getItem("tank_csv_data") || DEFAULT_CSV;
+      const lastSync = localStorage.getItem("tank_last_sync") || "Built-in default data";
+      calibrationData = parseCSV(savedCSV);
+      populateDropdown();
+      document.getElementById("statusText").textContent = "Offline Ready • Last sync: " + lastSync;
+    }
+
+    async function syncData() {
+      const status = document.getElementById("statusText");
+      if (!SHEET_CSV_URL.startsWith("http")) {
+        status.textContent = "Please add your Google Sheet CSV link in the code first.";
+        return;
+      }
+      status.textContent = "Syncing with cloud...";
+      try {
+        const response = await fetch(SHEET_CSV_URL + "&t=" + Date.now());
+        if (!response.ok) throw new Error("Network error");
+        const csvText = await response.text();
+        localStorage.setItem("tank_csv_data", csvText);
+        const now = new Date().toLocaleString();
+        localStorage.setItem("tank_last_sync", now);
+        loadLocalData();
+        alert("Calibration table updated successfully!");
+      } catch (err) {
+        status.textContent = "Sync failed (Offline). Using saved data.";
+      }
+    }
+
+    function calculate() {
+      const tank = document.getElementById("tankSelect").value;
+      const rawReading = document.getElementById("readingInput").value.replace(/,/g, "");
+      const x = parseFloat(rawReading);
+      const density = parseFloat(document.getElementById("densityInput").value);
+      let brix = parseFloat(document.getElementById("brixInput").value);
+
+      if (isNaN(x)) return alert("Please enter a valid level reading.");
+      if (isNaN(density)) return alert("Please enter a valid Density value.");
+      if (isNaN(brix)) return alert("Please enter a valid Brix value.");
+
+      // Auto-divide by 100 if entered as a whole number (e.g., 45 -> 0.45)
+      if (brix > 1) {
+        brix = brix / 100;
+      }
+
+      const points = calibrationData[tank];
+      let correction = 0;
+
+      if (x <= points[0].ideal) {
+        correction = points[0].corr;
+      } else if (x >= points[points.length - 1].ideal) {
+        correction = points[points.length - 1].corr;
+      } else {
+        for (let i = 0; i < points.length - 1; i++) {
+          const p1 = points[i];
+          const p2 = points[i + 1];
+          if (x >= p1.ideal && x <= p2.ideal) {
+            correction = p1.corr + ((x - p1.ideal) * (p2.corr - p1.corr)) / (p2.ideal - p1.ideal);
+            break;
+          }
+        }
+      }
+
+      const actualVolume = x + correction;
+      const finalResult = (actualVolume * density * brix) / 100;
+
+      document.getElementById("resCorrection").textContent = formatNumber(correction);
+      document.getElementById("resVolume").textContent = formatNumber(actualVolume);
+      document.getElementById("resBrixUsed").textContent = brix.toFixed(4).replace(/\.?0+$/, "");
+      document.getElementById("resFinal").textContent = formatNumber(finalResult);
+      document.getElementById("resultBox").style.display = "block";
+    }
+
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js");
+    }
+
+    loadLocalData();
+    syncData();
+  </script>
+</body>
+</html>
