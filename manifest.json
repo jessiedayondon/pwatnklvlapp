@@ -2,7 +2,16 @@
   "name": "Tank Calibration Calculator",
   "short_name": "TankCalc",
   "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#f4f6f8",
-  "theme_color": "#0066cc"
+  "theme_color": "#0066cc",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
 }
